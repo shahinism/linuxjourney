@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Linux journey (Persian translation)</title>
+    <link href="http://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet"></link>
+
+    <style>
+     body {
+       height: 275px;
+     }
+
+     .terminal {
+       font-family: monospace;
+     }
+
+     .prompt {
+       font-weight: bold;
+     }
+
+     .prompt:before {
+       content: "linuxjourney@persian:~$ "
+     }
+
+     .cursor {
+       animation: blink 1s linear infinite;
+     }
+
+     .cursor:after {
+       content: "\2588"
+     }
+
+     @keyframes blink {  
+       50% { opacity: 0.0; }
+     }
+
+     .response span {
+       display: block;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="terminal">
+      <img alt="" src="./asciiart.png"/>
+      <span class="prompt">git status</span>
+      <div class="response">
+        <span>
+          This project is an attempt to translate <a href="http://linuxjourney.com">LinuxJourney</a> to Persian.
+        </span>
+        <span>
+          pull request: <a href="https://github.com/cindyq/linuxjourney/pull/92">https://github.com/cindyq/linuxjourney/pull/92</a>
+        </span>
+        <span>
+          git repo: <a href="https://github.com/shahinism/linuxjourney">https://github.com/shahinism/linuxjourney</a>
+        </span>
+        in progress...
+      </div>
+      <span class="prompt"><span class="cursor"></span></span>
+    </div>
+    <img style="float:right;" alt="linux journey logo" src="https://linuxjourney.com/assets/jumbotron-60c93c2fc6bb16079b70fe2eccacaa05f2d6b002af4ff0667ddd8e283cbf81fd.png"/>
+  </body>
+</html>
