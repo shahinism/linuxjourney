@@ -1,37 +1,52 @@
-# Job Control
+# مدیریت کار‌ها
 
-## Lesson Content
+## محتوای درس
 
-Let's say you're working on a single terminal window and you're running a command that is taking forever. You can't interact with the shell until it is complete, however we want to keep working on our machines, so we need that shell open. Fortunately we can control how our processes run with jobs: 
+فرض کنیم که در حال کار در یک پنجرهٔ ترمینال هستید و دستوری که مدت زمان زیادی برای
+پایان کارش نیاز دارد را اجرا کرده‌اید. تا زمانی که این دستور پایان نیافته است‌،
+شما نمی‌توانید از این ترمینال استفادهٔ دیگری داشته باشید. اما به هر حال می‌خواهیم
+با این ماشین کار کنیم و در نتیجه نیاز به باز نگه داشتن این پوستهٔ فرمان داریم.
+خوشبختانه ما می‌توانیم روند اجرای پروسه‌ها را با مدیریت کنیم:
 
-<b>Sending a job to the background</b>
+### فرستادن یک کار به پس‌زمینه
 
-Appending an ampersand (&) to the command will run it in the background so you can still use your shell. Let's see an example:
+اضافه کردن یک `&` به پایان دستور، مراحل اجرای دستور را به پس‌زمینه می‌فرستد و شما
+می‌توانید از خط فرمان در زمان اجرای آن دستور استفاده کنید:
 
-<pre>$ sleep 1000 &
+
+```
+$ sleep 1000 &
 $ sleep 1001 &
 $ sleep 1002 &
-</pre>
+```
 
-<b>View all background jobs</b>
+### مشاهدهٔ همهٔ کار‌ها
 
-Now you can view the jobs you just sent to the background.
+حالا می‌توانید تمام دستور‌های فرستاده شده به پس زمینه را با استفاده از دستور زیر
+مشاهده کنید.
 
-<pre>$ jobs
+```
+$ jobs
 
 [1]    Running     sleep 1000 &
 [2]-   Running     sleep 1001 &
 [3]+   Running     sleep 1002 &
 
-</pre>
+```
 
-This will show you the job id in the first column, then the status and the command that was run. The <b>+</b> next to the job ID means that it is the most recent background job that started. The job with the <b>-</b> is the second most recent command.
+در خروجی این دستور‌، شناسهٔ کار در ستون اول، وضعیت در ستون دوم و خود دستور در ستون
+سوم نشان داده شده است. علامت `+` پس از شناسهٔ کار نشان می‌دهد که این آخرین کار
+اضافه شد به کار‌های پس‌زمینه است و علامت `-` که کار مذکور در این لیست یکی مانده به
+آخری است.
 
-<b>Sending a job to the background on existing job</b>
+### ارسال یک کار به پس‌زمینه برای کار‌های موجود
 
-If you already ran a job and want to send it to the background, you don't have to terminate it and start over again. First suspend the job with Ctrl-Z, then run the <b>bg</b> command to send it to the background.
+اگر کاری را اجرا کرده‌اید و می‌خواهید آن را به پس‌زمینه بفرستید‌، نیاز نیست که آن رو
+بسته و دوباره اجرا کنید. اول با استفاده از کلید‌های `Ctrl-Z` آن را معلق (suspend)
+کنید، و سپس با استفاده از دستور `bg` آن را به پس‌زمینه بفرستید.
 
-<pre>
+
+```
 pete@icebox ~ $ sleep 1003
 ^Z
 [4]+    Stopped     sleep 1003
@@ -45,28 +60,36 @@ pete@icebox ~ $ jobs
 [2]    Running     sleep 1001 &
 [3]-   Running     sleep 1002 &
 [4]+   Running     sleep 1003 &
-</pre>
+```
 
-<b>Moving a job from the background to the foreground</b>
+### بازگرداندن یک کار از پس‌زمینه
 
-To move a job out of the background just specify the job ID you want. If you run fg without any options, it will bring back the most recent background job (the job with the + sign next to it)
+برای بازگرداندن یک کار از پس‌زمینه کافیست شناسهٔ کار مورد نظر را به دستور `fg`
+بدهید. اگر این دستور را بدون هیچ شناسه‌ای اجرا کنید، آخرین کار فرستاده شده به
+پس‌زمینه (نشانه گذاری شده با علامت `+`) بازگردانده خواهد شد.
 
-<pre>$ fg %1</pre>
 
-<b>Kill background jobs</b>
+```
+$ fg %1
+```
 
-Similar to moving jobs out of the background, you can use the same form to kill the processes by using their Job ID.
+### بستن یک کار پس‌زمینه
 
-<pre>kill %1</pre>
+همچون بازگرداندن کار‌ها از پس‌زمینه‌، با استفاده از شناسهٔ کار و دستور `kill`
+می‌توانید کار‌های پس‌زمینه را ببندید.
 
-## Exercise
 
-Move some jobs between the background and the foreground
+```
+kill %1```
 
-## Quiz Question
+## تمرین
 
-What command is used to list background jobs?
+تعدادی پروسه را به پس‌زمینه فرستاده و سپس آن‌ها را برگردانید.
 
-## Quiz Answer
+## سوال آزمون
+
+از چه دستوری برای لیست کردن کار‌های پس زمینه استفاده می‌شود؟
+
+## پاسخ آزمون
 
 jobs
