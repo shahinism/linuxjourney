@@ -1,21 +1,21 @@
-# Application Layer
+# لایه‌ی نرم‌افزاری
 
-## Lesson Content
+## محتویات درس
 
-Let's say I wanted to send an email to Patty, we'll go through each of the TCP/IP layers to see this in action. 
+‫فرض کنید که من می‌خواهم یک ایمیل به پَتی بفرستم. می‌خواهیم از تک‌تک لایه‌های TCP/IP عبور کنیم و ببینم در هر لایه چه خبر است.
 
-Remember that packets are used to transmit data across networks, a packet consists of a header and payload. The header contains information about where the packet is going and where it came from. The payload is the actual data that is being transferred. As our packet traverses the network, each layer adds a bit of information to the header of the packet. Also keep in mind that different layers use a different term for our "packet", in the transport layer we essentially encapsulate our data in a segment and in the link layer we refer to this as a frame, but just know that packet can be used in regards to the same thing.
+‫اگر یادتان باشد بسته‌ها، وظیفه‌ی جابجا کردن دیتا بر روی بستر شبکه را برعهده داشتند. یک بسته شامل یک هدر و یک payload/پی‌لود می‌شود. هدر اطلاعاتی درباره‌ی جایی که بسته قرار است برود و جایی که از آن آمده را در خود دارد. پی‌لود، در اصل خود اطلاعاتی هست که قرار است جابجا شود. همینطور که بسته در بستر شبکه حرکت می‌کند هر لایه اطلاعاتی رو به هدر اضافه می‌کند. هر لایه‌ی متفاوت، از اصطلاحات خاص خود برای بسته‌ی ما استفاده می‌کند. در لایه‌ی انتقال/transport داده‌هایمان را به یک قسمت  ضمیمه می‌کنیم و  و در لایه‌ی پیوند/link ما به لایه‌ی انتقال به عنوان یک قالب آن اطلاعات را ارجاع می‌دهیم. این را هم در نظر داشته باشید که بسته‌ها می‌توانند در طیف موارد مشابه مانند همین لینک‌ها و ارجاع‌ها نیز استفاده شوند.
 
-First we start off in the application layer, when we send our email through our email client, the application layer will encapsulate this data. The application layers talks to the transport layer through a specified port and through this port it sends its data. We want to send an email through the application layer protocol SMTP (simple mail transfer protocol). The data is sent through our transport protocol which opens a connection to this port (port 25 is used for SMTP), so we get this data sent through this port and that data is sent to the Transport layer to be encapsulated into segments.
+‫اول از همه از لایه‌ی اپلیکیشن شروع می‌کنیم. زمانی که ما ایمیلی را از طریق کلاینت ایمیل ارسال می‌کنیم، لایه‌ی اپلیکیشن اطلاعات را لفافه‌پیچ می‌کند. سپس لایه‌ی اپلیکیشن با لایه‌ی انتقال از طریق پورت خاصی وارد گفتگو می‌شود و از طریق همان پورت اطلاعات را ارسال می‌کند. فرض کنید که می‌خواهیم ایمیل را از طریق لایه‌ی اپلیکیشن و پروتکل SMTP (پروتکل ارسال ساده ایمیل) ارسال کنیم.  دیتایی که از طریق پروتکل انتقال، ارسال شده یک اتصال به پورت (در اینجا پورت ۲۵ برای SMTP) باز می‌کند. در نتیجه ما دیتا را از طریق این پورت دریافت می‌کنیم و این دیتا به لایه‌ی انتقال برای لفافه‌پیچ شدن در یک یا چند قسمت، ارسال می‌شود.
 
-## Exercise
+## تمرین
 
-No exercises for this lesson.
+این درس تمرینی ندارد.
 
-## Quiz Question
+## سوال آزمون
 
-What layer is used to present the packet data in a user friendly format?
+کدام لایه برای ارائه‌ی دیتای بسته‌بندی شده به صورت فرمت کاربرپسند استفاده می‌شود.
 
-## Quiz Answer
+## پاسخ آزمون
 
 Application

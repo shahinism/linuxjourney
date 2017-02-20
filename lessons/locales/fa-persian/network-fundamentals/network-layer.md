@@ -1,19 +1,20 @@
-# Network Layer
+# لایه‌ی شبکه
 
-## Lesson Content
+## محتویات درس
 
-The Network layer determines the routing of our packets from our source host to a destination host. Fortunately in our example, our packet is only traveling within the same network, but the Internet is made up of many networks. These smaller networks that make up the Internet are known as subnets. All subnets connect to each other in some way, which is why we are able to get to www.google.com even though it's on its own network. I won't go into detail as we have a whole course dedicated to subnets, but for now in regards to our Network layer, know that the IP addresses define the rules to travel to different subnets. 
+‫لایه‌ی شبکه، مسیر بسته‌های ما از منبع میزبان به یک مقصد میزبان را مشخص می‌کند. خوشبختانه در مثال ما بسته‌ها بر خلاف اینترنت که از شبکه‌های بی‌شماری تشکیل شده، در یک شبکه‌ی یکسان در حال رد و بدل شدن می‌باشند. این شبکه‌های کوچکتر که شبکه‌ی جهانی (اینترنت) را ساخته‌اند با اسم زیرشبکه/ساب‌نت‌ها (subnets) شناخته می‌شوند. تمام زیرشبکه‌ها به طریقی به یکدیگر متصلند و به همین خاطر است که ما می‌توانیم به www.google.com حتی زمانی که روی شبکه‌ی خودمان هستیم، دسترسی پیدا کنیم. من با توجه به اینکه یک دوره‌ی جداگانه به زیرشبکه‌ها اختصاص داده‌ام، اینجا وارد جزئیات آن نمی‌شوم. صرفا برای این درس در همین حد بدانید که آدرس‌های IP، قوانین ارتباط بین ساب‌نت‌های مختلف را تعیین می‌کنند.
 
-In the network layer, it receives the segment coming from the transport layer and encapsulates this segment in an IP packet then attaches the IP address of the source host and the IP address of the destination host to the packet header. So at this point, our packet has information about where it is going and where it came from. Now it sends our packet to the physical hardware layer.
+در لایه‌ی شبکه، بخش‌هایی از لایه‌ی انتقال وارد می‌شود و این بخش‌ها در یک بسته‌ی IP لفافه‌پیچ شده و سپس آدرس‌های IP منبع و مقصد در هدرِ بسته به آن ضمیمه می‌شود. در اینجا بسته‌ی ما حاوی اطلاعاتی در خصوص جایی که قرار است برود و جایی که از آن آمده می‌شود. اکنون لایه‌ی شبکه، بسته‌ی ما را به لایه‌ی سخت‌افزار فیزیکی می‌فرستد.
 
-## Exercise
+## تمرین
 
-No exercises for this lesson.
+این درس تمرینی ندارد.
 
-## Quiz Question
+## سوال آزمون
 
-What are smaller networks that make up the Internet called?
+شبکه‌های کوچکتری که با جمع خود، شبکه‌ی جهانی (اینترنت) را ساخته‌اند چه نامیده می‌شوند؟
 
-## Quiz Answer
+## پاسخ آزمون
+
 
 subnets

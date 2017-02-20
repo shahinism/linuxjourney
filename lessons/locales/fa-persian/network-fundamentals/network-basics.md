@@ -1,28 +1,28 @@
-# Network Basics
+# اصول شبکه
 
-## Lesson Content
 
-Let's look at a typical home network, you have a few different components. 
+## محتویات درس
 
-<ul>
-<li>ISP - Your internet service provider, the company you pay to get Internet at your house.</li>
-<li>Router - The router allows each machine on your network to connect to the Internet. In most modern routers, you can connect via wireless or an Ethernet cable.</li>
-<li>WAN - Wide Area Network, this is what we call the network that encompasses everything between your router and a wider network such the Internet.</li>
-<li>WLAN - Wireless Local Area Network, this is the network between your router and any wireless devices you may have such as laptops.</li>
-<li>LAN - Local Area Network, this is the network between your router and any wired devices such as Desktop PCs.</li>
-<li>Hosts - Each machine on a network is known as a host.</li>
-</ul>
+بیایید نگاهی به یک شبکه‌ی خانگی معمول بیندازید. ما چند جزء مختلف در یک شبکه‌ی خانگی داریم.
 
-The data and information that gets transmitted through networks are known as packets and by the end of the Networking Nomad section, you'll understand in detail how a packet travels to and from hosts.
++ ISP - ارائه‌دهنده‌ی سرویس اینترنت شماست. شما به این شرکت پول می‌دهید تا به شما اینترنت بدهد.
++ Router - روتر به دستگاه‌های موجود بر روی شبکه‌ی شما اجازه‌ی اتصال به اینترنت را می‌دهد. روترهای جدید می‌توانند این اتصال را از طریق سیم شبکه یا به صورت بی‌سیم (وایرلس) برقرار کنند.
++ WAN - شبکه‌ی منطقه‌ی گسترده یا Wide Area Network شبکه‌ای‌ست که همه‌چیز را از روتر تا یک شبکه‌ی گسترده‌تر مثل اینترنت در برمی‌گیرد.
++ WLAN - شبکه‌ی منطقه‌ی محلی بی‌سیم یا Wireless Local Area Network شبکه‌ای‌ست که همه‌چیز از روتر تا همه‌ی دستگاه‌های بی‌سیم مانند لپ‌تاپ و غیره را در برمی‌گیرد.
++ LAN - شبکه‌ی منطقه‌ی محلی یا Local Area Network شبکه‌ای‌ست که همه چیز از روتر تا دستگاه‌هایی که توسط سیم به شبکه وصل شده‌اند را در برمی‌گیرد.
++ Hosts - میزبان‌ها به هر دستگاهی که در شبکه به عنوان میزبان شناخته می‌شود اطلاق می‌شود.
+اطلاعات و داده‌هایی که از طریق شبکه جابجا می‌شوند را به عنوان بسته‌ها (packets) می‌شناسیم و در آخر این دوره خواهید فهمید که این بسته‌ها چگونه به و یا از میزبان‌ها ارسال یا دریافت می‌شوند.
 
-## Exercise
 
-No exercises for this lesson.
+## تمرین
 
-## Quiz Question
+این درس تمرینی ندارد.
 
-What is the local area network known as?
+## سوال آزمون
 
-## Quiz Answer
+شبکه‌ی (منطقه‌ی) محلی با چه اسم شناخته می‌شود؟
+
+## پاسخ آزمون
+
 
 LAN
