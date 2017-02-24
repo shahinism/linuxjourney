@@ -1,27 +1,42 @@
-# Controlling Terminal
+# ترمینال‌های کنترل
 
-## Lesson Content
+## محتوای درس
 
-We discussed how there is a TTY field in the ps output. The TTY is the terminal that executed the command.
+در رابطه با وجود ستون TTY در خروجی ps صحبت کردیم و این که TTY شناسهٔ ترمینالی است
+که دستور در آن اجرا شده است.
 
-There are two types of terminals, regular <b>terminal devices</b> and <b>pseudoterminal devices</b>. A regular terminal device is a native terminal device that you can type into and send output to your system, this sounds like the terminal application you've been launching to get to your shell, but it's not. 
+دو نوع ترمینال وجود دارد‌، «دستگاه ترمینال» معمول و «شبه دستگاه ترمینال». یک
+دستگاه ترمینال به شما اجازهٔ تایپ دستور و ارسال خروجی به سیستم‌تان را می‌دهد، ممکن
+است این موضوع شبیه به کارکرد نرم‌افزار ترمینال‌تان به نظر برسد‌، ولی این‌طور نیست.
 
-We're gonna segue so you can see this action, go ahead and type Ctrl-Alt-F1 to get into TTY1 (the first virtual console), you'll notice how you don't have anything except the terminal, no graphics, etc. This is considered a regular terminal device, you can exit this with Ctrl-Alt-F7. 
+در ادامه سعی می‌کنیم این تفاوت را مشاهده کنیم، با تایپ کلید‌های `Ctrl-Alt-F1` به
+TTY1 وارد شوید (اولین کنسول مجازی)، می‌بینید که چیزی جز ترمینال ندارید‌، نه گرافیک
+و نه هیچ چیزی… به این دستگاه ترمینال می‌گویند. می‌توانید با زدن `Ctrl-Alt-F7` از
+آن خارج شوید.
 
-A pseudoterminal is what you've been used to working in, they emulate terminals with the shell terminal window and are denoted by PTS . If you look at ps again, you'll see your shell process under pts/*.
+یک شبه ترمینال چیزی است که تا الان با آن کار می‌کردید، آن‌ها دستگاه‌های ترمینال را
+شبیه سازی می‌کنند و با PTS نشانه‌گذاری می‌شوند. اگر یک بار دیگر به خروجی `ps` نگاه
+کنید‌، متوجه می‌شوید که پروسهٔ پوستهٔ خط فرمان‌تان با `pts/*‎` نشان داده شده است. 
 
-Ok, now circling back to the controlling terminal, processes are usually bound to a controlling terminal. For example, if you were running a program on your shell window such as find and you closed the window, your process would also go with it. 
+خوب‌، حالا به بحث ترمینال کنترل بر می‌گردیم، پروسه‌ها معمولا به یک ترمینال کنترل
+وابسته هستند. برای مثال اگر برنامه‌ای مثل find را در پنجرهٔ ترمینال‌تان اجرا کنید و
+پنجرهٔ ترمینال را ببندید‌، پروسهٔ برنامهٔ شما نیز همزمان بسته خواهد شد. 
 
-There are processes such as daemon processes, which are special processes that are essentially keeping the system running. They often start at system boot and usually get terminated when the system is shutdown. They run in the background and since we don't want these special processes to get terminated they are not bound to a controlling terminal. In the ps output, the TTY is listed as a <b>?</b> meaning it does not have a controlling terminal.
+پروسه‌هایی مانند دیمون پروسس‌ها وجود دارند که نوع خاصی از پروسه‌ها هستند و برای
+اجرای موفق سیستم استفاده می‌شوند. این پروسه‌ها معمولا در زمان بارگذاری سیستم شروع
+می‌شوند و در زمان خاموش شدن سیستم نیز متوقف می‌شوند. این پروسه‌ها در پس‌زمینه اجرا
+می‌شوند چون ما نمی‌خواهیم این پروسه‌ها اشتباها متوقف شوند‌، به هیچ ترمینال کنترلی
+وابسته نیستند. در خروجی `ps` پروسهٔ TTY با مقدار `?` لیست شده که به معنای نداشتن
+ترمینال کنترل است.
 
-## Exercise
+## تمرین
 
-Look at your ps output and list all the unique TTY values.
+به خروجی `ps` سیستم خود نگاه کنید و مقادیر یکتای TTY را ببینید. 
 
-## Quiz Question
+## سوال آزمون
 
-What value is given for a process that does not have a controlling terminal?
+چه مقداری برای پروسه‌ای که به ترمینال کنترلی وابسته نیست استفاده می‌شود؟
 
-## Quiz Answer
+## پاسخ آزمون
 
 ?
