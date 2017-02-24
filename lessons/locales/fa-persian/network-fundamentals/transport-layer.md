@@ -1,39 +1,38 @@
-# Transport Layer
+# لایه‌ی انتقال/ترنسپورت
 
-## Lesson Content
+## محتویات درس
 
-The transports layer helps us transfer our data in a way networks can read it. It breaks our data into chunks that will be transported and put back together in the correct order. These chunks are known as segments, they make it easier to transport our data across networks. 
+لایه‌ی انتقال به ما برای انتقال داده‌ها به صورتی که شبکه بتواند آن‌ها را بخواند،کمک می‌کند. این لایه داده‌ها را به قطعه‌هایی که قابل منتقل شده و سپس دوباره به ترتیب سر هم شوند می‌شکند. این قطعه‌ها به اسم سِگمنت‌ها یا قسمت‌ها شناخته می‌شوند. با استفاده از سگمنت‌ها ما اطلاعات را راحت‌تر در طول شبکه جابجا می‌کنیم.
 
-<b>Ports</b>
+**پورت‌ها**
 
-Even though we know where we are sending our data via IP addresses, they aren't specific enough if we want to send our data to certain processes or services. Services such as HTTP use a communication channel via ports. So if we want to send webpage data, we need to send it over the HTTP port (port 80). So in addition to forming segments, the transport layer will also attach the source and destination ports to the segment, so when the receiver gets the final packet it will know what port to use. 
+با وجود اینکه ما می‌دانیم که اطلاعات ما از طریق آدرس‌های IP به کجا فرستاده می‌شود، با این حال این آدرس‌ها آنقدر دقیق نیست که مشخص کند اطلاعات ما به کدام سرویس یا پروسه‌ی خاص فرستاده می‌شود. سرویس‌هایی مثل HTTP از یک کانال ارتباطی از طریق پورت‌ها استفاده می‌کنند. به علاوه برای تشکیل سگمنت‌ها، لایه‌ی انتقال پورت منبع و مقصد را به سگمنت الحاق می‌کند تا دریافت‌کننده‌ی نهایی بسته بداند که از چه پورتی بایستی استفاده کند.
 
-<b>UDP</b>
+**UDP**
 
-There are two popular transport protocols UDP and TCP. We'll briefly discuss UDP and spend most of our time on TCP, since it's the most commonly used.
+دو پروتکل محبوب و معمول انتقال UDP و TCP نام دارند. ما UDP را به اختصار معرفی می‌کنیم و زمان بیشتری را بر روی TCP می‌گذاریم. این تصمیم به دلیل استفاده‌ی گسترده از پروتکل TCP است.
 
-UDP is not a reliable method of transporting data, in fact it doesn't really care if you get all of your original data. This may sound terrible, but it does have it's uses, such as for media streaming, it's ok if you lose some frames in return you get your data a little faster. 
+پروتکل UDP از متد قابل اتکایی برای انتقال داده‌ها استفاده نمی‌کند. در اصل برای این پروتکل داده‌های اصلی هیچ اهمیتی ندارند. شاید در ابتدا وحشتزده شوید اما خب بایستی بدانید که این پروتکل استفاده‌های خاص خودش را دارد. به عنوان مثال برای استریم و پخش فایل‌های رسانه‌ای بسیار مفید است. شاید از دست دادن چند فریم در مقابل سرعت بیشتر در انتقال اطلاعات معامله‌ی خوبی باشد. پس پروتکل UDP اینجا وارد عمل می‌شود.
 
-<b>TCP</b>
 
-TCP provides a reliable connection-oriented stream of data. TCP uses ports to send data to and from hosts. An application opens up a connection from one port on it's host to another port on a remote host. In order to establish the connection, we use the TCP handshake. 
+**TCP**
 
-<ul>
-<li>The client (connecting process) sends a SYN segment to the server to request a connection</li>
-<li>Server sends the client a SYN-ACK segment to acknowledge the client's connection request</li>
-<li>Client sends an ACK to the server to acknowledge the server's connection request</li>
-</ul>
+پروتکل TCP یک ارتباط قابل اتکا از جریان داده‌ها را برقار می‌کند. این پروتکل از پورت‌ها برای ارسال و دریافت اطلاعات از میزبان‌ها استفاده می‌کند. برنامه یک ارتباط را از طریق یک پورت بر روی میزبانش به یک پورت در یک میزبان دیگر باز می‌کند. ما از هندشیک TCP برای ایجاد این ارتباط استفاده می‌کنیم.
 
-Once this connection is established, data can be exchanged over a TCP connection. The data is sent over in different segments and are tracked with TCP sequence numbers so they arrange in the correct order when they are delivered. In our email example, the transport layer attaches the destination port (25) and as well as the source port from where it came from.
++ کلاینت (ارتباط در حال انجام است) یک سگمنت SYN به سرور ارسال کرده و درخواست اتصال می‌دهد.
++ سرور یک سگمنت SYN-ACK برای تایید اتصال درخواستی از طرف کلاینت ارسال می‌کند.
++ کلاینت یک سگمنت ACK به نشانه‌ی تایید درخواست اتصال سرور ارسال می‌کند.
 
-## Exercise
+زمانی که این اتصال برقرار شد، داده‌ها می‌توانند از طریق اتصال TCP رد و بدل شوند. داده‌ها از طریق سگمنت‌های مختلف فرستاده می‌شوند و توسط شماره‌ی سریالی TCP ردیابی و پیگیری می‌شوند. این شماره کمک می‌کند تا ترتیب آن‌ها در حین انتقال برای سر هم شدن به هم نریزد. در مثال ایمیل، لایه‌ی انتقال پورت مقصد (۲۵) را علاوه بر پورتِ جایی که ایمیل از آن آمده الحاق می‌کند.
 
-No exercises for this lesson.
+## تمرین
 
-## Quiz Question
+تمرینی برای این درس نداریم! هورااا
 
-What is a reliable transport protocol?
+## سوال آزمون
 
-## Quiz Answer
+پروتکل قابل اتکای انتقال چیست؟
+
+## پاسخ آزمون
 
 TCP

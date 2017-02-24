@@ -1,55 +1,52 @@
-# TCP/IP Model
+# TCP/IP مدل
 
-## Lesson Content
+## محتوای درس
 
-The OSI model gave birth to what eventually became the TCP/IP model and this model is actually what the Internet is based off of. It is the actual implementation of networking. The TCP/IP model uses the TCP/IP protocol suite, which we just commonly refer to as TCP/IP. These protocols work together to specify how data should be gathered, addressed, transmitted and routed through a network. Using the TCP/IP model, we can see how these protocols are used to show the breakdown of how a packet travels through the network.
+مدل OSI نهایتا به ظهور مدل TCP/IP منجر شد و این مدل، دقیقا همان چیزی‌ست که اینترنت بر روی بستر آن شکل گرفت و گسترش پیدا کرد. مدل TCP/IP از پروتکل TCP/IP که به همین نام نیز خوانده می‌شود، استفاده می‌کند. این پروتکل‌ها مشخص می‌کنند که چطور داده‌ها جمع‌آوری و در سطح شبکه رد و بدل شود. با استفاده از مدل TCP/IP ما می‌توانیم نشان دهیم که یک بسته چطوری در مسیر شبکه از منبعی به مقصد سفر می‌کند.
 
-<b>Application Layer</b>
+**لایه‌ی اپلیکیشن/برنامه**
 
-The top layer of the TCP/IP model. It determines how your computer's programs (such as your web browser) interface with the transport layer services to view the data that gets sent or received.
+لایه‌ی بالایی مدل TCP/IP لایه‌ی برنامه است. این لایه ارتباط بین رابطِ برنامه‌ی کامپیوتری (مثلا فایرفاکس) را با سرویس‌های لایه‌ی انتقال برای مشاهده داده‌هایی که قرار است فرستاده یا دریافت شود برقرار می‌کند.
 
-This layer uses:
-<ul>
-<li>HTTP (Hypertext Transfer Protocol) - used for the webpages on the Internet.</li>
-<li>SMTP (Simple Mail Transfer Protocol) - electronic mail (email) transmission</li>
-</ul>
+این لایه از موارد زیر استفاده می‌کند:
 
-<b>Transport Layer</b>
++ HTTP (پروتکل انتقال ابرمتن) - که برای صفحات وب در اینترنت مورد استفاده قرار می‌گیرد.
++ SMPT (پروتکل ساده انتقال ایمیل) - انتقال دهنده‌ی نامه‌های الکترونیکی.
 
-How data will be transmitted, includes checking the correct ports, the integrity of the data, and basically delivering our packets.
+**لایه‌ی انتقال**
 
-This layer uses:
-<ul>
-<li>TCP (Transmission Control Protocol) - reliable data delivery</li>
-<li>UDP (User Datagram Protocol) - unreliable data delivery</li>
-</ul>
+چگونگی انتقال داده‌ها شامل بررسی پورت‌های صحیح، اصالت داده‌ها و توزیع بسته‌ها بر عهده‌ی این لایه است.
 
-<b>Network Layer</b>
+این لایه شامل موارد زیر می‌شود:
 
-This layers specifies how to move packets between hosts and across networks.
++ TCP (پروتکل کنترل انتقال) - توزیع با اصالت داده‌ها.
++ UDP (پروتکل دیتاگرام/داده‌نگار کاربر) - توزیع غیرقابل اتکای داده‌ها.
 
-This layer uses:
-<ul>
-<li>IP (Internet Protocol) - Helps route packets from one machine to another.</li>
-<li>ICMP (Internet Control Message Protocol) - Helps tell us what is going on, such as error messages and debugging information.</li>
-</ul>
+**لایه‌ی شبکه**
 
-<b>Link Layer</b>
+این لایه مشخص کننده‌ی چگونگی حرکت بسته‌ها بین میزبان و در طول مسیر شبکه است.
 
-This layer specifies how to send data across a physical piece of hardware. Such as data travelling through Ethernet, fiber, etc.
+این لایه شامل موارد زیر می‌شود:
 
-The lists above of protocols each layer uses is not extensive and you'll encounter many other protocols that come into play.
+ + IP (پروتکل اینترنت) - که کمک به مسیریابی بسته‌ها از یک دستگاه به دستگاه دیگر می‌کند.
+ + ICMP (پروتکل پیام کنترل اینترنت) - که به ما در خصوص اینکه چه اتفاقاتی در زیر پوست شبکه می‌افتد خبر می‌دهد. مانند پیام‌های خطا و یا اطلاعات در خصوص دیباگینگ.
 
-In the following lessons, we will dive through each of these layers and discuss how our packet traverses through the network in the eyes of the TCP/IP model (there are many perspectives on how a packet travels across networks, we won't look at them all, but be aware that they exist).
+**لایه‌ی لینک/پیوند**
 
-## Exercise
+این لایه مشخص کننده‌ی چگونگی ارسال اطلاعات از طریق قسمت فیزیکی سخت‌افزارهاست. مثلا ارسال داده‌ها از طریق اترنت، فیبر یا غیره.
 
-No exercises for this lesson.
+لیست فوق لیست کاملی نیست و در طول مسیر شما با پروتکل‌های فراوان دیگری نیز برخورد خواهید داشت.
 
-## Quiz Question
+در دروس پیش رو، ما وارد جزئیات هر کدام از این لایه‌ها خواهیم شد و در خصوص چگونگی انتقال بسته‌ها از طریق مدل TCP/IP بحث خواهیم کرد (انتقال بسته‌ها از طریق شبکه را می‌توان از زوایای مختلفی مورد بررسی قرار داد. هرچند قرار نیست ما در اینجا به تمامی آن‌ها بپردازیم ولی بهتر است که این واقعیت را در پس ذهن خود داشته باشید.)
 
-What is the top layer of the TCP/IP model?
+## تمرین
 
-## Quiz Answer
+این درس تمرینی ندارد.
+
+## سوال آزمون
+
+لایه‌ی فوقانی مدل TCP/IP کدام است؟
+
+## پاسخ آزمون
 
 Application
