@@ -1,17 +1,19 @@
-# OSI Model
+# مدل OSI
 
-## Lesson Content
+## محتویات درس
 
-Before we can look at some practical networking stuff, we have to go over some boring jargon that you've probably heard of before. The OSI (Open Systems Interconnection) model is a theoretical model of networking. This model shows us how a packet traverses through a network in seven different layers. I won't get into specifics of this model, since most of these networking courses will be focused on the TCP/IP model, but it should be mentioned that such a theoretical networking model exists and has actually played a large part in the TCP/IP networking model that we use today.
+قبل از اینکه وارد بخش عملی شبکه بشویم در خصوص موارد حوصله‌سربری که احتمالا پیش‌تر شنیده‌اید صحبت کنیم. مدل OSI یا اتصال میانی سیستم‌های باز یک مدل تئوریک شبکه است.  این مدل به ما نشان می‌دهد که یک بسته چطور در طول یک شبکه از هفت لایه‌ی مختلف عبور می‌کند. من وارد جزئیات این مدل نمی‌شود چرا که اکثر بخش‌های این دوره بر روی مدل TCP/IP متمرکز شده است ولی بایستی اشاره می‌کردم که این مدل تئوریک شبکه وجود دارد و نقش عمده‌ای در مدل شبکه TCP/IP که امروزه ما از آن استفاده می‌کنیم، ایفا می‌کند.
 
-## Exercise
+## تمرین
 
-Read more about the OSI model: <a href="https://en.wikipedia.org/wiki/OSI_model">https://en.wikipedia.org/wiki/OSI_model</a>
+در خصوص مدل OSI بیشتر بخوانید:
 
-## Quiz Question
+<a href="https://en.wikipedia.org/wiki/OSI_model">https://en.wikipedia.org/wiki/OSI_model</a>
 
-What is used as the theoretical model of networking?
+## سوال آزمون
 
-## Quiz Answer
+چه چیزی به عنوان مدل تئوریک از شبکه مورد استفاده قرار می‌گیرد؟
+
+## پاسخ آزمون
 
 OSI

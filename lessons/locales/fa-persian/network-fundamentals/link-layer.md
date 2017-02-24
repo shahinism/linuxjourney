@@ -1,44 +1,43 @@
-# Link Layer
+# لایه‌ی پیوند/لینک
 
-## Lesson Content
+## محتویات درس
 
-At the bottom of the TCP/IP model sits the Link Layer, this layer is the hardware specific layer.
+‫در قسمت انتهایی مدل TCP/IP لایه‌ی لینک قرار دارد. این لایه، لایه‌ی خاص سخت‌افزاری می‌باشد.
 
-In the link layer, our packet is encapsulated once more into something called a frame, the frame header attaches the source and destination MAC addresses of our hosts, checksums and packet separators so that the receiver can tell when a packet ends. 
+‫در لایه‌ی لینک، بسته‌ی ما یک بار دیگه در چیزی به اسم فریم/frame پیچیده می‌شود. هدرِ فریم آدرس‌های مک مبدا و مقصد میزبان ما، چک‌سام‌ها و جداکننده‌ی بسته را ضمیمه می‌کند تا دریافت‌کننده بتواند پایان یک بسته را اعلام کند.
 
-Fortunately we are on the same network, so our packet won't have to travel too far. First, the link layer attaches my source MAC address to the frame header, but it needs to know Patty's MAC address as well, how does it know that and how do I find it since it's not on the Internet? We use ARP!
+‫خوشبختانه ما بر روی یک شبکه‌ی مشابه قرار داریم در نتیجه بسته‌ی ما قرار نیست که مسیر طولانی را طی کند. اول لایه‌ی لینک آدرس مک را به هدرِ فریم ضمیمه می‌کند. اما بایستی که آدرس مکِ Patty را هم بداند. چگونه بایستی آدرس مک‌ی که روی شبکه اینترنت نیست را پیدا کنیم؟ از ARP استفاده می‌کنیم.
 
-<b>ARP (Address Resolution Protocol)</b>
+**ARP (پروتکل تفکیک آدرس)**
 
-ARP finds the MAC address associated with an IP address. ARP is used within the same network, if Patty was not on the same network, we would use a routing system to determine the next router that would receive the packet and once we were on the same network, we could use ARP. 
+‫ARP آدرس مک‌ی که با یک آدرس آی‌پی مرتبط است را پیدا می‌کند. ARP برای یک شبکه استفاده می‌شود. اگر Patty بر روی شبکه‌ی ما نباشد، از سیستم مسیریابی برای مشخص کردن روتر بعدی که می‌تواند دریافت‌کننده بسته باشد استفاده می‌کنیم. در اینجا ما بر روی یک شبکه هستیم و می‌توانیم از ARP استفاده کنیم.
 
-Once we are on the same network, systems first use the ARP look-up table that stores information about what IP addresses are associated with what MAC address. If the value is not there, then ARP is used. So then the system will send a broadcast message to the network using the ARP protocol to find out which host has IP 10.10.1.4. A broadcast message is a special message that is sent to all hosts on a network (aptly named for sending a broadcast), any machine with the requested IP address will reply with an ARP packet containing the IP address and the MAC address.
+‫زمانی که بر روی یک شبکه‌ایم، سیستم ابتدا با استفاده از اطلاعات جدول مراجعه ARP متوجه می‌شود که چه آدرس آی‌پی با چه آدرس سخت‌افزاری یا مک در ارتباط است.  اگه مقدار مورد نظر در آنجا قرار نداشت، در ادامه از پروتکل تفکیک آدرس یا همان ARP استفاده می‌شود. در اینجا سیستم یک "پیغام برادکست" با استفاده از ARP بر روی شبکه مخابره می‌کند تا دریابد کدام میزبان آی‌پی 10.10.1.4 را دارد.  "پیغام برادکست" یک پیغام ویژه است که به همه‌ی میزبان‌های بر روی یک شبکه برادکست یا مخابره می‌شود. هر دستگاهی با یک آدرس آی‌پی درخواست شده، با یک بسته‌ی ARP که شامل آدرس آی‌پی و آدرس مک می‌شود به پیغام پاسخ می‌دهد.
 
-Now that we have all the necessary data we need, IP address and MAC addresses, our link layer forwards this frame through our network interface card, out to the next device and finds Patty's network. This step is a little more complex than how I just explained it, but we will discuss more details in the Routing course.
+حالا تمام اطلاعات مورد نیاز را در اختیار داریم. آدرس IP و آدرس‌های MAC، لایه‌ی لینک این چارچوب را از طریق کارت رابط شبکه فوروارد می‌کند و به دستگاه بعدی می‌رساند و شبکه‌ی Patty را پیدا می‌کند. این مرحله کمی پیچیده‌تر از چیزی‌ست که ما توضیح دادیم ولی در دوره‌ی مسیریابی (Routing) در خصوص آن اطلاعات جزئی‌تری خواهیم داد.
 
-And there it is a simple (or not so simple) packet traversal down the TCP/IP layer. Keep in mind that packets don't travel in a one way fashion like this. We haven't even gotten to Patty's network yet! When travelling through networks, it requires going through the TCP/IP model at least twice before any data is sent or received. In fact, in reality the way this packet looks would be something like this: 
+‫در لایه‌ی TCP/IP پیمایش بسته‌ی ساده‌ای وجود دارد. در نظر داشته باشید که بسته‌ها به یاد داشته باشید که بسته‌ها به صورت یک‌طرفه سفر نمی‌کنند. ما هنوز به شبکه‌ی Patty هم نرسیده‌ایم! از بین شبکه‌ها عبور می‌کنیم، بایستی حداقل دوبار از مدل TCP/IP برای هر داده‌ای که فرستاده یا دریافت می‌شود عبور کنیم. در اصل بسته‌ها در واقعیت چیزی شبیه این خواهد بود:
 
-<b>Packet Traversal</b>
+**پیمایش بسته**
 
-<ol>
-<li>Pete sends Patty an email: this data gets sent to the transport layer.</li>
-<li>The transport layer encapsulates the data into a TCP or UDP header to form a segment, the segment attaches the destination and source TCP or UDP port, then the segment is sent to the network layer.</li>
-<li>The network layer encapsulates the TCP segment inside an IP packet, it attaches the source and destination IP address. Then routes the packet to the link layer.</li>
-<li>The packet then reaches Pete's physical hardware and gets encapsulated in a frame. The source and destination MAC address get added to the frame.</li>
-<li>Patty's receives this data frame through her physical layer and checks each frame for data integrity, then de-encapsulates the frame contents and sends the IP packet to the network layer.</li>
-<li>The network layer reads the packet to find the source and destination IP that was previously attached. It checks if it's IP is the same as the destination IP, which it is! It de-encapsulates the packet and sends the segment to the transport layer.</li>
-<li>The transport layer de-encapsulates the segments, checks the TCP or UDP port numbers and makes a connection to the application layer based on those port numbers.</li>
-<li>The application layer receives the data from the transport layer on the port that was specified and presents it to Patty in the form of the final email message</li>
-</ol>
++ ‫Pete یک ایمیل به Patty می‌فرستد: این داده‌ها به لایه‌ی انتقال فرستاده می‌شود.
++ ‫لایه‌ی انتقال، داده‌ها را در یک هدر TCP یا UDP بسته‌بندی تا یک بخش بسازد. بخش، پورت مقصد و منبع TCP یا UDP را ضمیمه کرده و سپس آن بخش به لایه‌ی شبکه فرستاده می‌شود.
++ لایه‌ی شبکه، بخش TCP را در داخل یک بسته IP قرار می‌دهد و آدرس IP منبع و مقصد را به آن ضمیمه می‌کند. سپس آن را به سمت لایه‌ی پیوند راهنمایی می‌کند.
++ سپس بسته به سخت‌افزار فیزیکی Pete رسیده و در یک چارچوب قرار می‌گیرد.
++ آدرس MAC منبع و مقصد به چارچوب اضافه می‌شود.
++ این چارچوب توسط لایه‌ی فیزیکی Patty گرفته شده و هر چارچوب برای صحت اصالت بررسی می‌شود و سپس محتویات آن باز شده و بسته‌ی IP به لایه‌ی شبکه فرستاده می‌شود.
++ لایه‌ی شبکه بسته را برای پیدا کردن IP منبع و مقصدی که به آن ضمیمه شده بود، می‌خواند. سپس IP را برای تطابق با IP مقصد بررسی می‌کند. سپس بسته را باز می‌کند و بخش را به لایه‌ی انتقال می‌فرستد.
++لایه‌ی انتقال بخش را باز کرده و پورت TCP یا UDP را بررسی می‌کند تا ارتباطی با لایه‌ی اپلیکیشن بر اساس شماره‌‌های پورت برقرار کند.
++لایه‌ی اپلیکیشن/برنامه داده‌ها را از لایه‌ی انتقالی که مرتبط با پورت مشخص شده بود دریافت می‌کند و در فرم یک ایمیل به Patty نمایش می‌دهد.
 
-## Exercise
+## تمرین
 
-No exercises for this lesson.
+تمرینی برای این درس نداریم.
 
-## Quiz Question
+## سوال آزمون
 
-What is used to find the MAC address on the same network?
+از چه چیزی برای پیدا کردن آدرس MAC بر روی یک شبکه‌ی همسان استفاده می‌شود؟
 
-## Quiz Answer
+## پاسخ آزمون
 
 ARP

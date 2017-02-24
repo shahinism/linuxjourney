@@ -1,31 +1,31 @@
-# Network Addressing
+# آدرس‌دهی در شبکه
 
-## Lesson Content
+## محتویات درس
 
-Before we jump into seeing how a packet moves across a network, we have to familiarize ourselves with some terminology. When you mail a letter, you must know who it is being sent to and where it is coming from. Packets need the same information, our hosts and other hosts are identified using MAC (media access control) addresses and IP addresses, to make it easier on us humans we use hostnames to identify a host.
+‫قبل از اینکه ببینیم یک بسته چطور در شبکه جابجا می‌شود بایستی خودمان را با اصطلاحات آن آشنا کنیم. زمانی که یک نامه را ارسال می‌کنید بایستی بدانید که نامه قرار است به دست چه کسی برسد و البته از کجا رسیده است. بسته‌ها هم این اطلاعات را نیاز دارند. میزبان ما، و میزبان‌های دیگر که با استفاده از آدرس‌های MAC و IP شناسایی می‌شوند. برای راحت‌کردن کار، ما از  hostnameها برای مشخص کردن یک میزبان یا host استفاده می‌کنیم.
 
-<b>MAC Addresses</b>
+**MAC آدرس‌های**
 
-A MAC address is a unique identifier used as a hardware address. This address will never change. When you want to get access to the Internet, your machine needs to have a device called a network interface card. This network adapter has it's own hardware address that's used to identify your machine. A MAC address for an Ethernet device looks something like this 00:C4:B5:45:B2:43. MAC addresses are given to network adapters when they are manufactured. Each manufacturer has an organizationally unique identifier (OUI) to identify them as the manufacturer, this OUI is denoted by the first 3 bytes of the MAC address. For example, Dell has 00-14-22, so a network adapter from Dell could have a MAC address like: 00-14-22-34-B2-C2. 
+‫یک آدرس MAC یک معرف یکتا برای آدرس دادن به یک سخت‌افزار است. این آدرس هیچوقت تغییر نمی‌کند. زمانی که شما می‌خواهید به اینترنت دسترسی پیدا کنید، دستگاه شما نیاز به دیوایس به اسم کارت رابط شبکه (network interface card) دارد. این رابط شبکه آدرس سخت‌افزار ویژه‌ی خود را دارد که معرف دستگاه شماست. یک آدرس MAC برای یک دیوایس اترنت (Ethernet) چیزی شبیه به 00:C4:B5:45:B2:43 است. آدرس‌های MAC در زمان ساخت رابط‌های شبکه به آن‌ها اختصاص داده می‌شوند. هر سازنده یا ارگان معرف منحصر به فرد خود را دارد (OUI). سه بایت اول از آدرس مک به OUI تعلق دارد. برای مثال معرف کمپانی دل 00-14-22 است در نتیجه آدرس MAC رابط‌های شبکه‌ای که توسط Dell ساخته می‌شود با این سه بایت شروع می‌شوند. مثلا: 00-14-22-34-B2-C2
 
-<b>IP Addresses</b>
+**آدرس‌های IP**
 
-An IP Address is used to identify a device on a network, they are hardware independent and can vary in syntax depending on if you are using IPv4 or IPv6 (more on this later). For now we'll assume you are using IPv4, so a typical IP address would look like: 10.24.12.4. IP addresses are used with the software side of networking, anytime a system is connected to the Internet it should have an IP address. They can also change if your network changes and are unique to the entire Internet (this isn't always the case once we learn about NAT). 
+‫یک آدرس IP برای مشخص کردن یک دستگاه بر روی شبکه مورد استفاده قرار می‌گیرد. آن‌ها از سخت‌افزار مستقلند و سینتکس آن با توجه به اینکه از IPv4 یا IPv6 استفاده می‌کند، متفاوت است. فرض کنیم که الان شما از IPv4 استفاده می‌کنید. آدرس IP شما بایستی چیزی شبیه به : 10.24.12.4 باشد. آدرس‌های IP توسط نرم‌افزار طرف شبکه استفاده می‌شود. هر زمانی که یک سیستم به اینترنت متصل می‌شود بایستی که یک آدرس IP داشته باشد. اگر شبکه‌ی شما عوض شود، آدرس IP شما هم تغییر خواهد کرد. آدرس‌های IP در سراسر شبکه‌ی جهانی اینترنت یکتا می‌باشند (البته زمانی که در خصوص NAT یاد گرفتید می‌فهمید که اوضاع می‌تواند متفاوت باشد).
 
-Remember it takes both software and hardware to move packets across networks, so we have two identifiers for each, MAC (hardware) and IP (software).
+به خاطر داشته باشید که هم نرم‌افزار و هم سخت‌افزار برای جابجا کردن بسته‌ها در سطح شبکه درگیر می‌شوند در نتیجه ما دو معرف MAC برای سخت‌افزار و IP برای نرم‌افزار داریم.
 
-<b>Hostnames</b>
+**نام‌های میزبان/Hostnames**
 
-One last way to identify your machines is through hostname, hostnames take your IP address and allow you to tie that address to a human readable name. Instead of remembering 192.12.41.4 you can just remember myhost.com.
+یک راه دیگر برای شناسایی دستگاه شما از طریق نامِ میزبان یا hostname است. نام‌های میزبان آدرس IP شما را می‌گیرند و اجازه می‌دهند که این آدرس به یک اسمی که آدمیزاد بتواند بخواند، پیوند بخورد. به جای به خاطر سپردن  192.12.41.4 می‌توانید فقط myhost.com را به خاطر بسپارید.
 
-## Exercise
+## تمرین
 
-No exercises for this lesson.
+این درس تمرینی ندارد.
 
-## Quiz Question
+## سوال آزمون
 
-How many bytes are in an IPv4 address?
+چند بایت در یک آدرس IPv4 وجود دارد؟
 
-## Quiz Answer
+## پاسخ آزمون
 
 4
