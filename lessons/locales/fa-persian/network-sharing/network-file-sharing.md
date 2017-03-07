@@ -1,33 +1,33 @@
-# File Sharing Overview
+# نگاهی اجمالی بر اشتراک‌گذاری فایل‌ها
 
-## Lesson Content
+## محتویات درس
 
-You usually are not the only computer on your network, this is especially the case if you're working in a commercial environment. When we want to transfer data from one machine to another, sometimes it maybe easier to connect a USB drive and manually copy them. But for the most part, if you're working with machines on the same network, the way to transfer data is through network file sharing. 
+معمولا شما تنها کامپیوتر موجود بر روی شبکه‌تان نیستید به خصوص وقتی در یک محیط کاری مشغولید. وقتی قرار است داده‌ها را از دستگاهی به دستگاه دیگر منتقل کنید، شاید استفاده از یک کارت حافظه یو‌اس‌بی راه ساده‌تر باشد. ولی وقتی با سیستم‌های موجود بر روی یک شبکه کار می‌کنید، انتقال از طریق شبکه راه‌حل دائمی‌تری به نظر می‌رسد.
 
-In this course we'll go over a couple of different methods to copy data to and from different machines on your network. We'll discuss some simple file copies, then we'll talk about mounting entire directories on your machine that act as a separate drive. 
+در این دوره ما با چند متد مختلف برای کپی کردن اطلاعات از و به دستگاه‌های مختلف از طریق شبکه‌تان آشنا خواهیم شد. از کپی کردن ساده‌ی فایل‌ها گرفته تا سوار کردن کل یک دایرکتوری که به صورت یک درایو مجزا عمل می‌کند بر روی دستگاه خودتان.
 
-One simple file sharing tool is the <b>scp</b> command. The scp command stands for secure copy, it works exactly the way the cp command does, but allows you to copy from one host over to another host on the same network. It works via ssh so all your actions are use the same authentication and security as ssh. 
+یک ابزار ساده برای اشتراک‌گذاری فرمان **scp** است. نام این فرمان از secure copy یا کپی امن گرفته شده است. دقیقا به همان روشی که cp عمل می‌کند، اجرا می‌شود ولی به شما اجازه‌ی کپی کردن فایل‌ها را از یک میزبان به میزبان دیگر بر روی یک شبکه‌ی همسان نیز می‌دهد. scp از طریق ssh کار می‌کند پس تمام اعمال شما اصالت‌سنجی امنیتی مشترکی با ssh  دارد.
 
-<b>To copy a file over from local host to a remote host</b>
+**کپی کردن یک فایل از میزبان محلی به میزبان راه دور**
 
-<pre>$ scp myfile.txt username@remotehost.com:/remote/directory</pre>
+```$ scp myfile.txt username@remotehost.com:/remote/directory```
 
-<b>To copy a file from a remote host to your local host</b>
+**کپی کردن فایل از میزبان از راه دور به میزبان محلی**
 
-<pre>$ scp username@remotehost.com:/remote/directory/myfile.txt /local/directory</pre>
+‍‍‍```$ scp username@remotehost.com:/remote/directory/myfile.txt /local/directory```
 
-<b>To copy over a directory from your local host to a remote host</b>
+**کپی یک دایرکتوری از میزبان محلی به میزبان از راه دور**
 
-<pre>$ scp -r mydir username@remotehost.com:/remote/directory</pre>
+```$ scp -r mydir username@remotehost.com:/remote/directory```
 
-## Exercise
+## تمرین
 
-Try to copy a file over with scp from one machine to another.
+سعی کنید که با استفاده از scp یک فایل را از دستگاهی به دستگاه دیگر منتقل کنید.
 
-## Quiz Question
+## سوال آزمون
 
-What command can you use to securely copy files from one host to another?
+چه دستوری برای کپی کردن امن فایل‌ها از یک میزبان به یک میزبان دیگر مورد استفاده قرار می‌گیرد؟
 
-## Quiz Answer
+## پاسخ آزمون
 
 scp

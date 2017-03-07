@@ -1,23 +1,33 @@
-# Simple HTTP Server
+# SimpleHTTPServer
 
-## Lesson Content
+## محتوای درس
 
-Python has a super useful tool for serving files over HTTP. This is great if you just want to create a quick network share that other machines on your network can access. To do that just go to the directory you want to share and run:
+پایتون یک ابزار بسیار کارا و مفید برای تغذیه فایل‌ها از طریق HTTP دارد. به عبارتی شما با استفاده از این ابزرا می‌توانید به سرعت یک شبکه اشتراکی بسازید تا دیگر دستگاه‌های موجود بر روی شبکه‌ی شما به فایل‌هایی که می‌خواهید دسترسی داشته باشند. برای انجام این کار، به دایرکتوری که قصد به اشتراک گذاشتنش را دارید بروید و فرمان زیر را اجرا کنید:
 
-<pre>$ python -m SimpleHTTPServer</pre>
+```$ python -m SimpleHTTPServer```
 
-This sets up a basic webserver that you can access via the localhost address. So grab the IP address of the machine you ran this on and then on another machine access it in the browser with: http://IP_ADDRESS:8000. On your own machine, you can view the files available by typing: http://localhost:8000 in your web browser.
+این کار یک وب‌سرور پایه‌ای و ساده را آماده می‌کند و شما می‌توانید از طریق آدرس localhost به آن دسترسی پیدا کنید. برای این کار ابتدا آدرس IP دستگاه خودتان بر روی شبکه را پیدا کنید. حالا مثلا می‌خواهید از طریق یک دستگاه دیگر به دایرکتوری که در دستگاه خودتان به اشتراک گذاشتید دسترسی پیدا کنید. به سراغ دستگاه دیگر می‌روید، یک مرورگر مثل فایرفاکس را باز می‌کنید و صفحه‌ی زیر را در Address bar آن تایپ و Enter را می‌زنید:
 
-You can also do this with node or if you are running Python 3, the syntax will be a little bit different.
+```http://IP_ADDRESS:8000```
 
-## Exercise
+به عنوان مثال اگه آدرس IP دستگاهی که فایل‌های را به اشتراک گذاشته 192.168.1.100 باشد، با باز کردن آدرس زیر در مرورگر سایر دستگاه‌های موجود بر روی آن شبکه، شما به محتویات آن دایرکتوری دسترسی پیدا می‌کنید:
 
-Try setting up a SimpleHTTPServer!
+```http://192.168.1.100:8000```
 
-## Quiz Question
+برای باز کردن همین دایرکتوری روی دستگاه خودتان هم می‌توانید از آدرس زیر (بدون نیاز به دانستن آدرس IP استفاده کنید):
 
-What tool can you use to create a simple http server with python?
+```http://localhost:8000```
 
-## Quiz Answer
+به این کار ساخت یک گره هم می‌گویند. شما برای ساخت گره مشابه در پایتون نسخه ۳ هم می‌توانید از همین روش استفاده کنید. البته توجه داشته باشید که سینتکس (متن کد) کمی متفاوت است.
+
+## تمرین
+
+یک SimpleHTTPServer بسازید!
+
+## سوال آزمون
+
+از چه ابزاری در پایتون برای ساخت یک سرور ساده HTTP استفاده می‌کنیم؟
+
+## پاسخ آزمون
 
 SimpleHTTPServer

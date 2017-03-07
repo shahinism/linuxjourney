@@ -1,40 +1,40 @@
-# rsync
+# rsync/آرسینک
 
-## Lesson Content
+## محتویات درس
 
-Another tool used to copy data from different hosts is rsync (short for remote synchronization). Rsync is very similar to scp, but it does have a major difference. Rsync uses a special algorithm that checks in advanced if there is already data that you are copying to and will only copy over the differences. For example, let's say that you were copying over a file and your network got interrupted, therefore your copy stopped midway. Instead of re-copying everything from the beginning, rsync will only copy over the parts that didn't get copied. 
+یک ابزار دیگر برای کپی کردن داده‌ها از میزبان‌های دیگر rsync (آرسینک) نام دارد. rsync مخفف remote synchronization یا همسان‌سازی از راه دور است. آرسینک بسیار شبیه به همتای خود scp است ولی یک تفاوت عمده با آن دارد. آرسینک از الگوریتم خاصی برای بررسی فایلی که قرار است روی میزبان کپی شود بهره می‌برد. بدین صورت که ابتدا فایل را چک می‌کند و اگر فایل بر روی میزبان هم وجود داشته باشد، تنها تفاوت‌های فایل اصلی با فایلی که قرار است در میزبان بازنویسی شود، را می‌نویسد.
 
-It also verifies the integrity of a file you are copying over with checksums. These small optimizations allow greater file transfer flexibility and makes rsync ideal for directory synchronization remotely and locally, data backups, large data transfers and more.
+بگذارید مثالی بزنم. فرض کنید که در حال کپی کردن یک فایل، شبکه قطع می‌شود و فایل ناقص کپی می‌شود. عوض اینکه آرسینک در نوبت بعدی کپی کردن اطلاعات، تمام فایل را کپی کند، ابتدا فایل را بررسی می‌نماید و سپس باقیمانده‌ی اطلاعات را کپی می‌کند.
 
-Some commonly-used rsync options:
+همچنین اصالت فایل را با استفاده از چک‌سام‌ها برای اطمینان از رونوشت گرفتن درست، بررسی می‌کند. همین تفاوت‌های کوچک به انعطاف‌پذیری بیشتر در انتقال اطلاعات منجر شده و آرسینک را به یک ابزار ایده‌آل برای همسان‌سازی دایرکتوری‌ها چه از راه دور چه محلی بدل کرده.
 
-<ul>
-<li>v - verbose output</li>
-<li>r - recursive into directories</li>
-<li>h - human readable output</li>
-<li>z - compressed for easier transfer, great for slow connections</li>
-</ul>
+از گزینه‌ها و سوئیچ‌ها پر کاربرد آرسینک می‌توان به موارد زیر اشاره کرد:
 
-<b>Copy/sync files on the same host</b>
++ v - خروجی طولانی برای مشاهده‌ی ریز اتفاقاتی که در حال افتادن است.
++ r - بازگشت به دایرکتوری‌ها برای کپی کردن اطلاعات یک مسیر شامل زیر مسیرها.
++ h - خروجی قابل خواندن توسط آدمیزاد.
++ z - فشرده‌سازی برای انتقال ساده‌تر. بسیار مناسب برای اتصال‌ها کُند.
 
-<pre>$ rsync -zvr /my/local/directory/one /my/local/directory/two</pre>
+**کپی/سینک کردن فایل‌ها در میزبان یکسان**
 
-<b>Copy/sync files to local host from a remote host</b>
+```$ rsync -zvr /my/local/directory/one /my/local/directory/two```
 
-<pre>$ rsync /local/directory username@remotehost.com:/remote/directory</pre>
+**کپی/سینک کردن فایل‌ها به یک میزبان محلی از یک میزبان از راه دور**
 
-<b>Copy/sync files to a remote host from a local host</b>
+```$ rsync /local/directory username@remotehost.com:/remote/directory```
 
-<pre>$ rsync username@remotehost.com:/remote/directory /local/directory</pre>
+**کپی/سینک کردن فایل‌ها به یک میزبان از راه دور از یک میزبان محلی**
 
-## Exercise
+```$ rsync username@remotehost.com:/remote/directory /local/directory```
 
-Use rsync to sync a directory to another directory, be sure not to overwrite an important directory!
+## تمرین
 
-## Quiz Question
+با استفاده از آرسینک یک دایرکتوری را به دایکتوری دیگر سینک کنید. مراقب باشید که دایرکتوری مهمی را ناقص نکنید.
 
-What command would be useful for data backups?
+## سوال آزمون
 
-## Quiz Answer
+از چه فرمانی برای پشتیبان/بک‌آپ گرفتن از داده‌ها استفاده می‌کنیم؟
+
+## پاسخ آزمون
 
 rsync

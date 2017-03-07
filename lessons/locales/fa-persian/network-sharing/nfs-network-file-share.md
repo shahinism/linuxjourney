@@ -1,28 +1,30 @@
 # NFS
 
-## Lesson Content
+## محتویات درس
 
-The most standard network file share for Linux is NFS (Network File System), NFS allows a server to share directories and files with one or more clients over the network. 
+استانداردترین سیستم اشترک‌گذاری فایل در شبکه در لینوکس NFS یا (سیستم‌فایل شبکه) نام دارد. NFS به سرور امکان به اشتراک گذاشتن دایرکتوری و فایل‌ها را با یک یا چند کلاینت را فراهم می‌کند.
 
-We won't get into the details of how to create an NFS server as it can get complex, however we will discuss setting up NFS clients.
+به پیچیدگی‌های فراوان ما وارد جزئیات اینکه چطور یک سرور NFS بسازیم نمی‌شویم. ولی در خصوص برپاسازی کلاینت‌ها صحبت خواهیم کرد.
 
-<b>Setting up NFS client</b>
+**برپاسازی کلاینت NFS**
 
-<pre>$ sudo service nfsclient start
-$ sudo mount server:/directory /mount_directory</pre>
+```
+$ sudo service nfsclient start
+$ sudo mount server:/directory /mount_directory
+```
 
-<b>Automounting</b>
+**سوار کردن خودکار فایل‌سیستم**
 
-Let's say you use the NFS server quite often and you want to keep it permanently mounted, normally you think you'd edit the /etc/fstab file, but you may not always get a connection to the server and that can cause issues on bootup. Instead what you want to do is setup automounting so that you can connect to the NFS server when you need to. This is done with the <b>automount</b> tool or in recent versions of Linux <b>amd</b>. When a file is accessed in a specified directory, automount will look up the remote server and automatically mount it. 
+فرض کنیم که شما از یک سرور NFS به کرات استفاده می‌کنیدو می‌خواهید آن را همیشه در دسترس داشته باشید. خب برای مانت/سوار کردن آن احتمالا به فکر ویرایش ‎/etc/fstab خواهید افتاد. ولی اگر اشکالی در اتصال به شبکه در حین راه‌اندازی سیستم پیش بیاید یا شبکه دیرتر از حد معمول (خواندن اف‌استب) لود شود، روند راه‌اندازی سیستم شما با مشکل مواجه می‌شود. برای این کار ما از automounting استفاده می‌کنیم. این کار توسط ابزاری به اسم automount یا در نسخه‌های اخیر لینوکس amd انجام می‌شود. زمانی که یک فایل به یک دایرکتوری خاص دسترسی پیدا کرد automount به دنبال سرور می‌گردد و آن را سوار می‌کند.
 
-## Exercise
+## تمرین
 
-Read the manpage for NFS to learn more.
+صفحه‌ی man مربوط به NFS را برای اطلاعات بیشتر مطالعه کنید.
 
-## Quiz Question
+## سوال آزمون
 
-What tool is used to manage mount points automatically?
+از چه ابزاری برای مدیریت خودکار نقاط اتصال استفاده می‌شود؟
 
-## Quiz Answer
+## پاسخ آزمون
 
 automount

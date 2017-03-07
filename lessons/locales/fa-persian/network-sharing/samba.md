@@ -1,62 +1,67 @@
-# Samba
+# Samba/سمبا
 
-## Lesson Content
+## محتویات درس
 
-In the early days of computing, it became necessary for Windows machines to share files with Linux machines, thus the Server Message Block (SMB) protocol was born. SMB was used for sharing files between Windows operating systems (Mac also has file sharing with SMB) and then it was later cleaned up and optimized in the form of the Common Internet File System (CIFS) protocol. 
+در روزهای اول پردازش اطلاعات، لازم بود که دستگاه‌های ویندوزی بتوانند با دستگاه‌های لینوکسی فایل به اشتراک بگذارند. به همین خاطر پروتکل Server Message Block (SMB) متولد شد. SMB برای به اشتراک گذاشتن فایل‌ها بین سیستم‌عامل‌های ویندوزی (و همینطور مک) مورد استفاده قرار می‌گرفت و بعدها با بهبودهایی که پیدا کرد به پروتکل فایل‌سیستم مشترک شبکه‌ی جهانی (CIFS) تبدیل شد.
 
-Samba is what we call the Linux utilities to work with CIFS on Linux. In addition to file sharing, you can also share resources like printers. 
+سمبا/Samba ابزارهای لینوکسی برای کار با CIFS در لینوکس است. علاوه بر به اشتراک گذاری فایل‌ها می‌توانید منابعی مثل پرینتر را نیز توسط آن به اشتراک بگذارید.
 
-<b>Create a network share with Samba</b>
+**ساخت یک شبکه اشتراک گذاری با سمبا**
 
-Let's go through the basic steps to create a network share that a Windows machine can access:
+با هم به ساخت یک شبکه‌ی به اشتراک گذاری می‌سازیم که سیستم ویندوزی هم قادر به دسترسی به آن باشد:
 
-<b>Install Samba</b>
+**نصب سمبا**
 
-<pre>$ sudo apt update
-$ sudo apt install samba</pre>
+```
+$ sudo apt update
+$ sudo apt install samba
+```
 
-<b>Setup smb.conf</b>
+**Setup smb.conf**
 
-The configuration file for Samba is found at /etc/samba/smb.conf, this file should tell the system what directories should be shared, their access permissions, and more options. The default smb.conf comes with lots of commented code already and you can use those as an example to write your own configurations.
+فایل پیکربندی برای Samba در مسیر /etc/samba/smb.conf در دسترس است. این فایل به سیستم می‌گوید که چه دایرکتوری‌هایی بایستی به اشتراک گذاشته شوند. همچنین مجوز‌های دسترسی و دیگر گزینه‌ها هم توسط این فایل قابل پیکربندی‌ست. فایل پیش‌فرض smb.conf با خطوط بسیار زیادی که به اصلاح کامنت شده‌اند همراه است. خطوط کامنت شده توسط توسعه دهنده در فایل پیکربندی قرار داده می‌شود ولی غیرفعال‌ند تا زمانی که خود کاربر بنا به نیاز آن را به اصلاح از حالت کامنت خارج کند (آن‌کامنت کند).
 
-<pre>$ sudo vi /etc/samba/smb.conf</pre>
+```$ sudo vi /etc/samba/smb.conf```
 
-<b>Setup up a password for Samba</b>
+**تعیین یک رمز عبور برای سمبا**
 
-<pre>$ sudo smbpasswd -a [username]</pre>
+```$ sudo smbpasswd -a [username]```
 
-<b>Create a shared directory</b>
+**ساخت یک دایرکتوری برای به اشتراک‌گذاشتن**
 
-<pre>$ mkdir /my/directory/to/share</pre>
+```$ mkdir /my/directory/to/share```
 
-<b>Restart the Samba service</b>
+**شروع‌مجدد سرویس سمبا**
 
-<pre>$ sudo service smbd restart</pre>
 
-<b>Accessing a Samba share via Windows</b>
+```$ sudo service smbd restart```
 
-In Windows, just type in the network connection in the run prompt: \\HOST\sharename.
+**دسترسی به سمبا توسط ویندوز**
 
-<b>Accessing a Samba/Windows share via Linux</b>
+در ویندوز، در قسمت Run اسم دایرکتوری به اشتراک‌گذاشته شده را بنویسید:
 
-<pre>$ smbclient //HOST/directory -U user</pre>
+```\\HOST\sharename```
 
-The Samba package includes a command line tool called <b>smbclient</b> that you can use to access any Windows or Samba server. Once you're connected to the share you can navigate and transfer files.
+**دسترسی به سمبا/ویندوز از طریق لینوکس**
 
-<b>Attach a Samba share to your system</b>
+```$ smbclient //HOST/directory -U user```
 
-Instead of transferring files one by one, you can just mount the network share on your system.
+بسته‌ی سمبا شامل یک ابزار خط فرمانی به اسم smbclient می‌شود که توسط آن می‌تواند به هر سیستم ویندوزی یا سرور سمبا متصل شوید. زمانی که به سیستم اشتراک‌گذارنده متصل شدید، می‌توانید بین فایل‌ها بگردید و فایل‌ها را نقل و انتقال دهید.
 
-<pre>$ sudo mount -t cifs servername:directory mountpount -o user=username,pass=password</pre>
+**اتصال یک فایل سیستم اشتراک‌گذاشته‌شده سمبا به سیستم‌تان**
 
-## Exercise
+به جای رد و بدل کردن فایل‌ها بین سیستم خودتان و سیستمی که فایل‌ها را به اشتراک می‌گذارد می‌توانید که فایل‌سیستم به اشتراک‌گذاشته شده را را بر روی سیستم خود سوار کنید.
 
-Setup a Samba share, if you don't have one, open up smb.conf and familiarize yourself with the options in the config file.
+```$ sudo mount -t cifs servername:directory mountpount -o user=username,pass=password```
 
-## Quiz Question
+## تمرین
 
-What is the latest protocol used for file transfer between Windows and Linux?
+یک اشتراک سمبا ایجاد کنید (البته اگر از قبل ندارید) سپس فایل smb.conf را باز کرده و کمی خودتان را به گزینه‌های موجود در فایل آشنا کنید.
 
-## Quiz Answer
+## سوال آزمون
+
+آخرین پروتکل برای رد و بدل کردن فایل‌ها بین سیستم‌های ویندوزی و لینوکسی چیست؟
+
+## پاسخ آزمون
 
 CIFS
